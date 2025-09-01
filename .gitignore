@@ -1,0 +1,75 @@
+# ==========================================
+# 🧠 GENERALES
+# ==========================================
+.DS_Store
+.env
+.env.*.local
+*.local
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Sistema
+Thumbs.db
+ehthumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# 📦 NODE / TYPESCRIPT
+# ==========================================
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+tmp/
+out/
+*.tsbuildinfo
+
+# ==========================================
+# 🧱 BACKEND (NestJS)
+# ==========================================
+backend/.env
+backend/.env.*
+backend/dist/
+backend/node_modules/
+backend/coverage/
+backend/test-results/
+backend/docker-data/
+backend/*.sqlite
+
+# ==========================================
+# 🎨 FRONTEND (React + Vite + Tailwind)
+# ==========================================
+frontend/.env
+frontend/.env.*
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/.next/
+frontend/.turbo/
+frontend/.cache/
+frontend/.eslintcache
+
+# Tailwind JIT artifacts
+frontend/tailwind.config.js
+frontend/postcss.config.js
+
+# ==========================================
+# 📦 ZIPs / EXPORTS / OTROS
+# ==========================================
+*.zip
+*.tar
+*.gz
+export-*.json
