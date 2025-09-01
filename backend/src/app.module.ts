@@ -14,7 +14,14 @@ import { Teacher } from './teachers/entities/teacher.entity';
 import { Subject } from './subjects/entities/subject.entity';
 import { Course } from './courses/entities/course.entity';
 import { IncidentType } from './incident-types/entities/incident-type.entity';
-import { SchoolYear } from './courses/entities/school-year.entity';
+import { SchoolYear } from './school-years/entities/school-year.entity';
+import { User } from './auth/entities/user.entity';
+import { Enrollment } from './enrollments/entities/enrollment.entity';
+import { Assignment } from './assignments/entities/assignment.entity';
+import { EnrollmentsModule } from './enrollments/enrollments.module';
+import { AssignmentsModule } from './assignments/assignments.module';
+import { SchoolYearsModule } from './school-years/school-years.module';
+import { ReportsModule } from './reports/reports.module';
 
 @Module({
   imports: [
@@ -35,6 +42,9 @@ import { SchoolYear } from './courses/entities/school-year.entity';
           Course,
           IncidentType,
           SchoolYear,
+          User,
+          Enrollment,
+          Assignment,
         ],
         synchronize: true, // ⚠️ Solo para desarrollo
       }),
@@ -46,6 +56,10 @@ import { SchoolYear } from './courses/entities/school-year.entity';
     TeachersModule,
     SubjectsModule,
     IncidentTypesModule,
+    EnrollmentsModule,
+    AssignmentsModule,
+    SchoolYearsModule,
+    ReportsModule,
   ],
 })
 export class AppModule {}
