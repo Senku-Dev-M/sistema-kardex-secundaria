@@ -16,5 +16,10 @@ export class Student {
 
   @Column({ type: 'date' })
   birthDate!: Date;
-}
 
+  @Column({ type: 'char', length: 1, nullable: true })
+  gender?: string;
+
+  @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt!: Date;
+}
