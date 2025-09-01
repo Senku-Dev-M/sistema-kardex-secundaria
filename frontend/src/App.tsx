@@ -1,15 +1,25 @@
-import ParentLogin from './features/parents/ParentLogin'
+import { Routes, Route } from 'react-router-dom';
+import Landing from './features/landing/Landing';
+import Login from './features/auth/Login';
+import ParentLogin from './features/parents/ParentLogin';
+import TeacherDashboard from './features/teachers/TeacherDashboard';
+import AdminDashboard from './features/admin/AdminDashboard';
+import RegisterIncident from './features/teachers/RegisterIncident';
+import ProtectedRoute from './core/components/ProtectedRoute';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 p-6">
-      <header className="max-w-5xl mx-auto mb-6">
-        <h1 className="text-2xl font-bold">Sistema de Kardex Escolar</h1>
-        <p className="text-sm text-gray-600">Base de proyecto — frontend</p>
-      </header>
-      <main className="max-w-5xl mx-auto">
-        <ParentLogin />
-      </main>
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/padres" element={<ParentLogin />} />
+      <Route element={<ProtectedRoute roles={['TEACHER']} />}> 
+        <Route path="/profesor" element={<TeacherDashboard />} />
+        <Route path="/profesor/incidentes/nuevo" element={<RegisterIncident />} />
+      </Route>
+      <Route element={<ProtectedRoute roles={['ADMIN']} />}> 
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Route>
+    </Routes>
+  );
 }
